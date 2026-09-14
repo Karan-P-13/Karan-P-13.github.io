@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan P - Portfolio</title>
+    <link rel="stylesheet" href="style.css?v=1789408691">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon for Tech Stack logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.95em%22 x=%2250%25%22 text-anchor=%22middle%22 font-size=%2275%22 fill=%22%230ea5e9%22 font-family=%22sans-serif%22 font-weight=%22bold%22>PK</text></svg>">
+</head>
+<body class="loading">
+
+    <!-- Cinematic Loading Screen -->
+    <div id="loader" class="cinematic-loader">
+        <div class="loader-content">
+            <div class="loader-subtitle">KARAN'S</div>
+            <div class="loader-title">PORTFOLIO</div>
+            <div class="splash-loader"></div>
+        </div>
+    </div>
+
+    <canvas id="matrix-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; opacity: 0; pointer-events: none; transition: opacity 1s;"></canvas>
+    <div id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Ambient Animated Background -->
+    <div class="bg-blobs">
+        <div class="blob blue"></div>
+        <div class="blob red"></div>
+        <div class="blob purple"></div>
+    </div>
+    <!-- Particles Overlay -->
+    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;"></div>
+
+    <header>
+        <nav>
+            <div class="logo">KARAN P.</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content reveal-init">
+                <h1><span style="font-size: 2.5rem; font-weight: 600;">Hi, I'm</span> <br><span class="highlight" style="font-size: 4.5rem;">Karan</span></h1>
+                <h2 class="typewriter-container">
+                    I'm a <span class="typewriter"></span><span class="cursor-blink">|</span>
+                </h2>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/karan-1310-p/" target="_blank" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Karan-P-13" target="_blank" class="social-circle"><i class="fab fa-github"></i></a>
+                    <a href="mailto:karanprabhakar1310@gmail.com" class="social-circle"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+918870772526" class="social-circle"><i class="fas fa-phone"></i></a>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">Discover My Work</a>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="#" onclick="openImageModal(event, 'resume_preview.png', 'Resume Preview')" class="btn secondary">Preview Resume</a>
+                        <a href="Karan_P_Resume.pdf" download="Karan_P_Resume.pdf" class="btn secondary" title="Download Resume" onclick="fireConfetti()" style="padding: 0.8rem 1.2rem;"><i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image-container reveal-init">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image">
+                    <img src="profile.jpg" alt="Karan P">
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title reveal-init">About Me</h2>
+            <div class="about-content glass reveal-init" style="text-align: left; padding: 3rem; line-height: 1.8;">
+                <div id="about-text-container">
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-primary);">
+                        I am a dedicated and passionate <strong style="color: var(--accent-red);">Computer Science Engineer</strong> currently completing my B.Tech at Hindustan Institute of Technology and Science, Chennai (maintaining a strong CGPA of 9.3/10). My journey in technology is driven by a deep fascination with how complex systems operate under the hood, leading me to build a rock-solid foundation in core computer science subjects including Java, Database Management Systems, and Computer Networks.
+                    </p>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-primary);">
+                        I actively translate theoretical knowledge into practical solutions by building robust full-stack web applications. My technical arsenal spans modern web technologies such as HTML, CSS, JavaScript, React, and enterprise-level backend frameworks like Spring Boot. I thrive in environments that challenge me to solve intricate problems and optimize system architectures.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-primary);">
+                        Beyond web development, I am continuously pushing the boundaries of my skill set by diving into the rapidly evolving fields of <strong style="color: var(--accent-red);">Artificial Intelligence & Machine Learning</strong> as part of my final-semester project. As a clear communicator and a highly dependable team player, I am eager to bring my adaptability, strong work ethic, and relentless learning mindset to an entry-level engineering role where I can make an immediate impact.
+                    </p>
+                </div>
+                
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2.5rem 0 1.5rem 0;">
+                <div style="display: flex; gap: 3rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 45px; height: 45px; border-radius: 50%; background: rgba(14, 165, 233, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red); font-size: 1.2rem;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1;">Location</p>
+                            <p style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0; margin-top: 0.4rem;">Chennai, India</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 45px; height: 45px; border-radius: 50%; background: rgba(14, 165, 233, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red); font-size: 1.2rem;">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1;">Career Goal</p>
+                            <p style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0; margin-top: 0.4rem;">Backend Software Engineer</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 45px; height: 45px; border-radius: 50%; background: rgba(14, 165, 233, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-red); font-size: 1.2rem;">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1;">Interests</p>
+                            <p style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0; margin-top: 0.4rem;">Badminton, Gaming, Music</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education" id="education">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="edu-timeline">
+            <!-- B.Tech -->
+            <div class="edu-timeline-item">
+                <div class="edu-timeline-dot"></div>
+                <div class="edu-timeline-content">
+                    <h3>B.Tech, Computer Science Engineering</h3>
+                    <p class="edu-inst">Hindustan Institute of Technology and Science, Chennai</p>
+                    <div class="edu-date-badge">Aug 2023 – Present</div>
+                    <p class="edu-grade">CGPA: 8.60 / 10</p>
+                    <p class="edu-desc">Relevant Coursework: Data Structures & Algorithms (DSA), Object-Oriented Programming (OOPs), Database Management Systems, Computer Networks</p>
+                </div>
+            </div>
+            <!-- Class XII -->
+            <div class="edu-timeline-item">
+                <div class="edu-timeline-dot"></div>
+                <div class="edu-timeline-content">
+                    <h3>Higher Secondary (Class XII), ISC</h3>
+                    <p class="edu-inst">Vikasa School, Madurai</p>
+                    <div class="edu-date-badge">2023</div>
+                    <p class="edu-grade">Percentage: 77%</p>
+                </div>
+            </div>
+            <!-- Class X -->
+            <div class="edu-timeline-item">
+                <div class="edu-timeline-dot"></div>
+                <div class="edu-timeline-content">
+                    <h3>Secondary (Class X), ICSE</h3>
+                    <p class="edu-inst">Vikasa School, Madurai</p>
+                    <div class="edu-date-badge">2021</div>
+                    <p class="edu-grade">Percentage: 78.16%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="skills">
+            <h2 class="section-title reveal-init" style="display: flex; align-items: center; gap: 15px;">
+                <i class="devicon-java-plain colored" style="font-size: 2.5rem;"></i> Java Expertise
+            </h2>
+            <div class="java-expertise-content glass reveal-init"  style="padding: 3rem; text-align: left; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-primary);">
+                    I possess a robust and deep understanding of <strong style="color: var(--accent-red);">Java</strong> and its core concepts, which serves as the primary backbone of my software development and problem-solving toolkit. My expertise spans across essential Object-Oriented Programming (OOP) principles such as Inheritance, Polymorphism, Encapsulation, and Abstraction, alongside advanced topics including multithreading, exception handling, and the Java Collections Framework. I have actively applied these concepts in building robust full-stack web applications using the Spring Boot framework, ensuring scalable and secure backend architectures.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-primary);">
+                    My dedication to mastering Java is formally backed by my credentials. Through the rigorous 30-Day Technical Training Program with <strong style="color: var(--accent-red);">Aptitude Guru Hemchandar</strong>, I cemented my grasp on complex Data Structures and Algorithms (DSA) implemented directly in Java, significantly enhancing my logic-building and optimization capabilities. Furthermore, my <strong style="color: var(--accent-red);">Java Full Stack Certification</strong> from Greens Technologies validates my ability to seamlessly integrate enterprise-level Java backend services with modern database fundamentals and interactive front-end technologies to deliver complete, production-ready applications.
+                </p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title reveal-init">Experience</h2>
+            <div class="card-container">
+                <div class="card glass reveal-init">
+                    <div class="card-header">
+                        <h3>Data Analysis Intern</h3>
+                        <span>Plasmid</span>
+                    </div>
+                    <ul class="card-list">
+                        <li>Cleaned and analyzed structured datasets in Python to support internal reporting.</li>
+                        <li>Worked with raw data exports, handling missing values and formatting issues before analysis.</li>
+                        <li>Summarized findings into short reports the team used for decision-making.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title reveal-init">Projects</h2>
+            <div class="card-container">
+                <div class="card glass reveal-init project-card" style="display: flex; gap: 2rem; align-items: center;">
+                    <div class="project-icon" style="flex: 0 0 100px; height: 100px; background: rgba(14, 165, 233, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-red);">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div>
+                        <h3>LearnAR — Augmented Reality Learning Platform</h3>
+                        <p class="institution">HTML, Echo3D</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.5rem;">Developed an educational learning platform using HTML, integrated with Echo3D to render interactive 3D augmented reality models.</li>
+                            <li style="margin-bottom: 0.5rem;">Enabled users to view and explore AR models directly within learning content, making complex concepts more engaging and easier to understand.</li>
+                            <li>Designed the platform with a focus on enhancing the learning experience through interactive, visual content delivery.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="credentials">
+            <h2 class="section-title reveal-init">Certifications</h2>
+            <div class="cert-grid">
+                
+                <a href="#" onclick="openImageModal(event, 'cert-aptitude.png', 'Java & DSA Certificate')" class="cert-card glass reveal-init">
+                    <div class="cert-image">
+                        <img src="cert-aptitude.png" alt="Aptitude Guru Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Java & DSA</h3>
+                        <p>Aptitude Guru Hemchandar</p>
+                        <p class="cert-desc">Completed a 30-day technical training program on Java and Data Structures & Algorithms.</p>
+                    </div>
+                </a>
+
+                <a href="#" onclick="openImageModal(event, 'cert-greens.png', 'Java Full Stack Certificate')" class="cert-card glass reveal-init">
+                    <div class="cert-image">
+                        <img src="cert-greens.png" alt="Greens Technologies Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Java Full Stack</h3>
+                        <p>Greens Technologies</p>
+                        <p class="cert-desc">Certified in comprehensive Front-end, Back-end, and database fundamentals for web applications.</p>
+                    </div>
+                </a>
+
+                <a href="#" onclick="openImageModal(event, 'cert-codsoft.png', 'CodSoft Internship Offer Letter')" class="cert-card glass reveal-init">
+                    <div class="cert-image">
+                        <img src="cert-codsoft.png" alt="CodSoft Internship Offer Letter">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Artificial Intelligence Internship</h3>
+                        <p>CodSoft</p>
+                        <p class="cert-desc">4-week virtual internship focused on learning and developing new AI skills and gaining hands-on knowledge.</p>
+                    </div>
+                </a>
+                <a href="#" onclick="openImageModal(event, 'plasmid-training.png', 'Industrial Training Certificate')" class="cert-card glass reveal-init">
+                    <div class="cert-image">
+                        <img src="plasmid-training.png" alt="Plasmid Industrial Training Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Industrial Training</h3>
+                        <p>Plasmid</p>
+                        <p class="cert-desc">Completed industrial training in Data Analytics from August to October 2024.</p>
+                    </div>
+                </a>
+
+                <a href="#" onclick="openImageModal(event, 'plasmid-internship.png', 'Data Analytics Internship Certificate')" class="cert-card glass reveal-init">
+                    <div class="cert-image">
+                        <img src="plasmid-internship.png" alt="Plasmid Internship Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Data Analytics Internship</h3>
+                        <p>Plasmid</p>
+                        <p class="cert-desc">Successfully completed an internship in Data Analytics with commendable performance.</p>
+                    </div>
+                </a>
+
+                <a href="#" onclick="openImageModal(event, 'plasmid-lor.png', 'Letter of Recommendation')" class="cert-card glass reveal-init">
+                    <div class="cert-image">
+                        <img src="plasmid-lor.png" alt="Plasmid Letter of Recommendation">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Letter of Recommendation</h3>
+                        <p>Plasmid Innovation Ltd</p>
+                        <p class="cert-desc">Strongly recommended for sincere efforts and delivering quality work in assigned industrial projects.</p>
+                    </div>
+                </a>
+
+
+            </div>
+        </section>
+
+        <section id="tech-stack" class="mini-tech-stack">
+            <div class="tech-grid reveal-init">
+                <div class="tech-item" data-tooltip="Java"><i class="devicon-java-plain colored"></i></div>
+                <div class="tech-item" data-tooltip="Spring Boot"><i class="devicon-spring-plain colored"></i></div>
+                <div class="tech-item" data-tooltip="React"><i class="devicon-react-original colored"></i></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="reveal-init" style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 class="contact-title" style="margin-bottom: 1.5rem;">Let's Connect</h2>
+                <p class="contact-subtitle" style="margin-bottom: 3rem;">
+                    I am currently open to entry-level software engineering roles. Feel free to reach out for collaborations or just a friendly hello!
+                </p>
+                <div class="social-links" style="display: flex; justify-content: center; gap: 1.5rem;">
+                    <a href="mailto:karanprabhakar1310@gmail.com" class="social-circle glass"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+918870772526" class="social-circle glass"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://www.linkedin.com/in/karan-1310-p/" target="_blank" class="social-circle glass"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Karan-P-13" target="_blank" class="social-circle glass"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <footer>
+        <p>&copy; 2026 Karan P. All rights reserved.</p>
+        <span class="pk-hint" style="position: absolute; left: 5%; top: 50%; transform: translateY(-50%); font-size: 0.55rem; letter-spacing: 1px; user-select: none;">TRY TYPING 'PK'</span>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+
+    <!-- Resume Modal -->
+    <div id="image-modal" class="modal-overlay">
+        <div class="modal-header">
+            <h2 id="modal-title">Preview</h2>
+            <button class="close-btn" onclick="closeImageModal()">×</button>
+        </div>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Preview">
+        </div>
+    </div>
+
+    <!-- External Libraries for Catchy Effects -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js?v=1789407786"></script>
+</body>
+</html>
