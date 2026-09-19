@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan P - Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=1789848859">
+    <link rel="stylesheet" href="style.css?v=1789850428">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Devicon for Tech Stack logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.95em%22 x=%2250%25%22 text-anchor=%22middle%22 font-size=%2275%22 fill=%22%230ea5e9%22 font-family=%22sans-serif%22 font-weight=%22bold%22>PK</text></svg>">
+    <script type="module">
+        import { initGhostFibers } from "./ghost-fibers.js?v=1789850035";
+        document.addEventListener("DOMContentLoaded", () => {
+            // Try initializing on hero section
+            initGhostFibers("ghost-fibers-bg", { lineColor: "#0ea5e9", glowColor: "#0284c7" });
+        });
+    </script>
 </head>
 <body class="loading">
+    <div id="ghost-fibers-bg"></div>
 
     <!-- Cinematic Loading Screen -->
     <div id="loader" class="cinematic-loader">
@@ -349,7 +357,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="click-spark.js?v=1789849614"></script>
-    <script src="script.js?v=1789849614"></script>
+    <script src="click-spark.js?v=1789850035"></script>
+    <script src="script.js?v=1789850175"></script>
 </body>
 </html>

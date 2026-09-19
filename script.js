@@ -4,6 +4,9 @@ function typeTextNodes(element, speed) {
     if(element.dataset.typed === 'true') return;
     element.dataset.typed = 'true';
 
+    const rect = element.getBoundingClientRect();
+    element.style.minHeight = rect.height + 'px';
+
     const textNodes = [];
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
     let node;
@@ -21,11 +24,16 @@ function typeTextNodes(element, speed) {
     let charIndex = 0;
     
     function typeNextChar() {
-        if (nodeIndex >= textNodes.length) return; 
+        if (nodeIndex >= textNodes.length) {
+            element.style.minHeight = '';
+            return; 
+        }
         
         const currentInfo = textNodes[nodeIndex];
-        currentInfo.node.nodeValue = currentInfo.text.substring(0, charIndex + 1);
-        charIndex++;
+        charIndex += 4; // Types 4 chars at a time to be ultra fast
+        if(charIndex > currentInfo.text.length) charIndex = currentInfo.text.length;
+        
+        currentInfo.node.nodeValue = currentInfo.text.substring(0, charIndex);
         
         if (charIndex >= currentInfo.text.length) {
             nodeIndex++;

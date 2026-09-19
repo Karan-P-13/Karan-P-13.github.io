@@ -23,7 +23,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -1145,13 +1145,14 @@ body.loading {
     100% { width: 150vw; opacity: 0; }
 }
 
-/* Timeline Layout */
+/* Timeline Layout Container */
 .edu-timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
     padding-left: 2.5rem; /* Space for the vertical line */
 }
+/* The Vertical Line */
 .edu-timeline::before {
     content: '';
     position: absolute;
@@ -1159,7 +1160,7 @@ body.loading {
     left: 0;
     height: 100%;
     width: 2px;
-    background: var(--accent-red); /* Your Cyan/Blue variable */
+    background: var(--accent-color); /* E.g., #0ea5e9 */
     border-radius: 2px;
 }
 .edu-timeline-item {
@@ -1177,18 +1178,18 @@ body.loading {
     width: 16px;
     height: 16px;
     background: #0a0a0a; /* Dark hollow center */
-    border: 3px solid var(--accent-red);
+    border: 3px solid var(--accent-color);
     border-radius: 50%;
     transform: translateX(-50%); /* Centers on the 2px line */
-    box-shadow: 0 0 10px var(--accent-red);
+    box-shadow: 0 0 10px var(--accent-color);
     transition: all 0.3s ease;
     z-index: 2;
 }
-/* Dot Hover Effect */
+/* Dot Hover Effect (Triggers when hovering the card) */
 .edu-timeline-item:hover .edu-timeline-dot {
     transform: translateX(-50%) scale(1.4);
-    background: var(--accent-red);
-    box-shadow: 0 0 20px var(--accent-red), 0 0 40px var(--accent-red);
+    background: var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color);
 }
 /* Glassmorphism Cards */
 .edu-timeline-content {
@@ -1218,7 +1219,7 @@ body.loading {
 /* Typography inside Cards */
 .edu-timeline-content h3 {
     font-size: 1.3rem;
-    color: var(--accent-red);
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 .edu-inst {
@@ -1229,8 +1230,8 @@ body.loading {
 .edu-date-badge {
     display: inline-block;
     padding: 5px 15px;
-    background: rgba(14, 165, 233, 0.1); /* Faint cyan */
-    color: var(--accent-red);
+    background: rgba(0, 195, 255, 0.1); /* Faint tint matching accent */
+    color: var(--accent-color);
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -1254,8 +1255,8 @@ body.loading {
 .card,
 .skill-category {
     --gh-angle: -30deg;
-    --gh-duration: 800ms;
-    --gh-size: 300%;
+    --gh-duration: 550ms;
+    --gh-size: 200%;
     --gh-rgba: rgba(255, 255, 255, 0.12);
     position: relative;
     overflow: hidden;
@@ -1275,7 +1276,7 @@ body.loading {
         hsla(0, 0%, 0%, 0),
         hsla(0, 0%, 0%, 0) 100%
     );
-    transition: var(--gh-duration) ease;
+    transition: var(--gh-duration) ease-in-out;
     background-size:
         var(--gh-size) var(--gh-size),
         100% 100%;
@@ -1305,3 +1306,4 @@ body.loading {
     position: relative;
     z-index: 2;
 }
+html { background-color: var(--bg-color); }
