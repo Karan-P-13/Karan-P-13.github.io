@@ -1088,15 +1088,18 @@ body.loading {
 html { background-color: var(--bg-color); }
 
 
-/* Levitating Lift Effect */
+/* Universal Levitating Lift Effect (No Slanting) */
+.card, .glass, .skill-category {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
 .project-card {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
     cursor: pointer;
 }
 
-.project-card:hover {
-    transform: translateY(-12px) perspective(1000px) scale3d(1.02, 1.02, 1.02) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(14, 165, 233, 0.3) !important;
+.card:hover, .glass:hover, .skill-category:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(14, 165, 233, 0.2) !important;
 }
 
 /* Cinematic Modal Styles */
