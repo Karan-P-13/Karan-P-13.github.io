@@ -464,3 +464,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// Cinematic Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('project-modal');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if(!modal || projectCards.length === 0) return;
+
+    // Elements inside modal
+    const mTitle = document.getElementById('modal-title');
+    const mTech = document.getElementById('modal-tech');
+    const mDesc = document.getElementById('modal-desc');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Extract data from the card to populate the modal
+            const title = card.querySelector('h3').innerText;
+            const tech = card.querySelector('.institution').innerText;
+            const listItems = card.querySelector('ul').innerHTML;
+
+            mTitle.innerText = title;
+            mTech.innerText = tech;
+            mDesc.innerHTML = `<ul class="card-list" style="margin-left: 0;">${listItems}</ul>`;
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    });
+
+    // Close Modal
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal) closeModal(); // Click outside to close
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+});

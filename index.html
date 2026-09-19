@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan P - Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=1789852364">
+    <link rel="stylesheet" href="style.css?v=1789852651">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Devicon for Tech Stack logos -->
@@ -417,12 +417,33 @@
     </div>
 
     <!-- External Libraries for Catchy Effects -->
+    
+    <!-- Cinematic Project Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div id="modal-tech" class="modal-tech">Tech Stack</div>
+                </div>
+                <div id="modal-desc" style="color: var(--text-secondary); line-height: 1.6;">
+                    Project description goes here.
+                </div>
+                <div class="modal-buttons">
+                    <a href="#" class="modal-btn primary" id="modal-demo-btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" class="modal-btn secondary" id="modal-github-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="click-spark.js?v=1789850035"></script>
-    <script src="script.js?v=1789852364"></script>
+    <script src="script.js?v=1789852651"></script>
 </body>
 </html>
