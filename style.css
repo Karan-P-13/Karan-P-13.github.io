@@ -1040,7 +1040,6 @@ body.loading {
 
 
 /* Glassmorphism Cards */
-.edu-timeline-content {
     background: rgba(18, 18, 22, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -1054,18 +1053,15 @@ body.loading {
 }
 
 /* Inner Typography & Badges */
-.edu-timeline-content .edu-title {
     font-size: 1.3rem;
     color: var(--accent-red);
     margin-bottom: 5px;
 }
 
-.edu-timeline-content .edu-institution {
     color: #cccccc;
     font-size: 1.05rem;
 }
 
-.edu-timeline-content .edu-date-badge {
     display: inline-block;
     padding: 6px 16px;
     margin: 15px 0;
@@ -1076,14 +1072,12 @@ body.loading {
     font-weight: 600;
 }
 
-.edu-timeline-content .edu-details {
     font-size: 0.95rem;
     color: #a0a0a0;
     line-height: 1.6;
 }
 
 /* Spotlight Hover Effect */
-.edu-timeline-content::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1097,7 +1091,6 @@ body.loading {
     z-index: 5;
 }
 
-.edu-timeline-content:hover::after {
     opacity: 1;
 }
 
@@ -1117,8 +1110,6 @@ body.loading {
     /* Make sure the dot transitions smoothly */
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-    .edu-timeline-content { padding: 1.5rem; }
-    .edu-timeline-content .edu-title { font-size: 1.2rem; }
 }
 
 
@@ -1145,113 +1136,11 @@ body.loading {
     100% { width: 150vw; opacity: 0; }
 }
 
-/* Timeline Layout Container */
-.edu-timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2.5rem; /* Space for the vertical line */
-}
-/* The Vertical Line */
-.edu-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 2px;
-    background: var(--accent-color); /* E.g., #0ea5e9 */
-    border-radius: 2px;
-}
-.edu-timeline-item {
-    position: relative;
-    margin-bottom: 2.5rem;
-}
-.edu-timeline-item:last-child {
-    margin-bottom: 0;
-}
-/* Glowing Dot perfectly aligned on the line */
-.edu-timeline-dot {
-    position: absolute;
-    top: 2rem;
-    left: -2.5rem; /* Exactly matches container padding */
-    width: 16px;
-    height: 16px;
-    background: #0a0a0a; /* Dark hollow center */
-    border: 3px solid var(--accent-color);
-    border-radius: 50%;
-    transform: translateX(-50%); /* Centers on the 2px line */
-    box-shadow: 0 0 10px var(--accent-color);
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-/* Dot Hover Effect (Triggers when hovering the card) */
-.edu-timeline-item:hover .edu-timeline-dot {
-    transform: translateX(-50%) scale(1.4);
-    background: var(--accent-color);
-    box-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color);
-}
-/* Glassmorphism Cards */
-.edu-timeline-content {
-    background: rgba(18, 18, 22, 0.85); /* Dark translucent background */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-/* Spotlight Effect overlay */
-.edu-timeline-content::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.06) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-.edu-timeline-content:hover::after {
-    opacity: 1;
-}
-/* Typography inside Cards */
-.edu-timeline-content h3 {
-    font-size: 1.3rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-}
-.edu-inst {
-    color: #ccc;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-.edu-date-badge {
-    display: inline-block;
-    padding: 5px 15px;
-    background: rgba(0, 195, 255, 0.1); /* Faint tint matching accent */
-    color: var(--accent-color);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-.edu-grade {
-    font-size: 1rem;
-    color: #eee;
-    margin-bottom: 0.5rem;
-}
-.edu-desc {
-    font-size: 0.85rem;
-    color: #aaa;
-    line-height: 1.5;
-}
+
 
 /* ========== GlareHover Effect (React Bits → Vanilla CSS) ========== */
 /* Applied globally to all card-like elements */
 .glass,
-.edu-timeline-content,
 .card,
 .skill-category {
     --gh-angle: -30deg;
@@ -1263,7 +1152,6 @@ body.loading {
 }
 
 .glass::before,
-.edu-timeline-content::before,
 .card::before,
 .skill-category::before {
     content: '';
@@ -1290,7 +1178,6 @@ body.loading {
 }
 
 .glass:hover::before,
-.edu-timeline-content:hover::before,
 .card:hover::before,
 .skill-category:hover::before {
     background-position:
@@ -1300,7 +1187,6 @@ body.loading {
 
 /* Ensure card content stays above the glare layer */
 .glass > *,
-.edu-timeline-content > *,
 .card > *,
 .skill-category > * {
     position: relative;
