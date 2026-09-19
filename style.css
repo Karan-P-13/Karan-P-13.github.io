@@ -824,28 +824,50 @@ body.light-mode .compact-form textarea {
 }
 
 /* PK Matrix Easter Egg */
+
 body.pk-mode {
-    --bg-color: #000 !important;
-    --text-primary: #0f0 !important;
-    --text-secondary: #0a0 !important;
-    --accent-red: #0f0 !important;
-    --border-color: rgba(0, 255, 0, 0.4) !important;
-}
-body.pk-mode {
+    --bg-color: #050510 !important;
+    --text-primary: #ff0055 !important;
+    --text-secondary: #00f0ff !important;
+    --accent-color: #ff0055 !important;
+    --border-color: rgba(255, 0, 85, 0.4) !important;
     font-family: 'Courier New', Courier, monospace !important;
 }
-body.pk-mode .glass,
-    background: rgba(0, 20, 0, 0.85) !important;
-    border-color: #0f0 !important;
-    box-shadow: 0 0 15px rgba(0,255,0,0.2) !important;
+
+body.pk-mode .glass, body.pk-mode .edu-timeline-content {
+    background: rgba(10, 0, 10, 0.85) !important;
+    border: 1px solid #ff0055 !important;
+    box-shadow: 0 0 20px rgba(255,0,85,0.3), inset 0 0 10px rgba(0,240,255,0.2) !important;
 }
+
+body.pk-mode #ghost-fibers-bg,
 body.pk-mode .bg-blobs, 
 body.pk-mode #particles-js { 
-    display: none !important; 
+    opacity: 0 !important;
+    transition: opacity 1s;
 }
+
 body.pk-mode #matrix-canvas { 
     opacity: 1 !important; 
 }
+
+/* Glitch Effect for Headings */
+body.pk-mode h1, body.pk-mode h2, body.pk-mode .logo {
+    position: relative;
+    color: #fff !important;
+    text-shadow: 2px 0 #ff0055, -2px 0 #00f0ff !important;
+    animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 0 #ff0055, -2px 0 #00f0ff; transform: translate(0); }
+    20% { text-shadow: -2px 0 #ff0055, 2px 0 #00f0ff; transform: translate(-2px, 1px); }
+    40% { text-shadow: 2px 0 #ff0055, -2px 0 #00f0ff; transform: translate(2px, -1px); }
+    60% { text-shadow: -2px 0 #ff0055, 2px 0 #00f0ff; transform: translate(-1px, 2px); }
+    80% { text-shadow: 2px 0 #ff0055, -2px 0 #00f0ff; transform: translate(1px, -2px); }
+    100% { text-shadow: 2px 0 #ff0055, -2px 0 #00f0ff; transform: translate(0); }
+}
+
 
 /* Skills Grid Layout */
 .skills-grid {

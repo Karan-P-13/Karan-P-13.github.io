@@ -398,10 +398,18 @@ function activateMatrix() {
         matrixInterval = setInterval(() => {
             mCtx.fillStyle = "rgba(0, 0, 0, 0.05)";
             mCtx.fillRect(0, 0, mCanvas.width, mCanvas.height);
-            mCtx.fillStyle = "#0F0";
+            
             mCtx.font = fontSize + "px monospace";
             for(let i=0; i<drops.length; i++) {
                 const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+                
+                // Alternate between Hot Pink and Electric Cyan randomly
+                if(Math.random() > 0.5) {
+                    mCtx.fillStyle = "#ff0055"; // Pink
+                } else {
+                    mCtx.fillStyle = "#00f0ff"; // Cyan
+                }
+                
                 mCtx.fillText(text, i*fontSize, drops[i]*fontSize);
                 if(drops[i]*fontSize > mCanvas.height && Math.random() > 0.975) drops[i] = 0;
                 drops[i]++;
