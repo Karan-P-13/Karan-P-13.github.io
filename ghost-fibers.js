@@ -71,7 +71,7 @@ void main() {
   vec2 resolution = max(uResolution, vec2(1.0));
   vec2 uv = (2.0 * gl_FragCoord.xy - resolution) / resolution.y;
   float time = uTime * uSpeed;
-  vec3 backdrop = mix(vec3(0.070588, 0.058824, 0.090196), vec3(1.0), step(0.5, uLightMode));
+  vec3 backdrop = mix(vec3(0.02, 0.02, 0.03), vec3(1.0), step(0.5, uLightMode));
   vec3 centerTone = max(uLineColor * 0.85567 - uGlowColor * 0.06186, vec3(0.0));
   vec3 cloudTone = uLineColor * 0.19588 + uGlowColor * 0.2268;
   vec2 p = uv;
@@ -97,9 +97,9 @@ void main() {
   }
   
   float center = exp(-2.2 * dot(uv, uv));
-  color += centerTone * center;
+  // color += centerTone * center;
   float cloud = exp(-1.5 * length(uv + vec2(sin(time * 0.3) * 0.25, cos(time * 0.25) * 0.18)));
-  color += cloudTone * cloud;
+  // color += cloudTone * cloud;
   float vignette = 1.0 - smoothstep(0.35, 1.45, length(uv));
   color *= mix(1.0 - uVignette, 1.0, vignette);
   color = 1.0 - exp(-color * uBrightness);
@@ -147,10 +147,10 @@ export function initGhostFibers(containerId, options = {}) {
         lineSpacing: 2,
         lineSharpness: 16,
         glowFalloff: 10,
-        glowIntensity: 0.8,
-        brightness: 1.2,
+        glowIntensity: 0.15,
+        brightness: 0.25,
         blueBoost: 1.25,
-        vignette: 0.8,
+        vignette: 0.0,
         grain: 0.05,
         lightMode: false,
         dpr: 1,
