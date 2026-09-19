@@ -1025,12 +1025,12 @@ body.loading {
         100% { opacity: 1; filter: blur(0px); letter-spacing: 4px; transform: translateY(0); }
     }
     
-    @keyframes cinematicLine {
-        0% { width: 0; opacity: 0; }
+    
         40% { width: 250px; opacity: 1; }
         70% { width: 250px; opacity: 1; }
         100% { width: 150vw; opacity: 0; }
     }
+}
 
 
 
@@ -1123,31 +1123,27 @@ body.loading {
 
 
 
-
-
 .splash-loader {
-    width: 0;
-    height: 4px;
-    min-height: 4px;
-    flex-shrink: 0;
-    background: #0ea5e9;
-    box-shadow: 0 0 15px #0ea5e9, 0 0 30px #0ea5e9;
-    border-radius: 4px;
-    margin-top: 25px;
+    width: 0px;
+    height: 3px; /* Slightly thicker to ensure visibility */
+    min-height: 3px;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
+    border-radius: 2px;
+    margin-top: 25px; /* Pushes it down below the text cleanly */
     display: block;
-    position: relative;
-    z-index: 10;
     animation: cinematicLine 2.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
 }
-
 @keyframes cinematicLine {
     0% { width: 0px; opacity: 0; }
     40% { width: 300px; opacity: 1; }
     80% { width: 450px; opacity: 1; }
     100% { width: 150vw; opacity: 0; }
 }
-
-
+    40% { width: 300px; opacity: 1; }
+    80% { width: 400px; opacity: 1; }
+    100% { width: 150vw; opacity: 0; }
+}
 
 /* Timeline Layout */
 .edu-timeline {
@@ -1249,4 +1245,63 @@ body.loading {
     font-size: 0.85rem;
     color: #aaa;
     line-height: 1.5;
+}
+
+/* ========== GlareHover Effect (React Bits → Vanilla CSS) ========== */
+/* Applied globally to all card-like elements */
+.glass,
+.edu-timeline-content,
+.card,
+.skill-category {
+    --gh-angle: -30deg;
+    --gh-duration: 800ms;
+    --gh-size: 300%;
+    --gh-rgba: rgba(255, 255, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass::before,
+.edu-timeline-content::before,
+.card::before,
+.skill-category::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        var(--gh-angle),
+        hsla(0, 0%, 0%, 0) 60%,
+        var(--gh-rgba) 70%,
+        hsla(0, 0%, 0%, 0),
+        hsla(0, 0%, 0%, 0) 100%
+    );
+    transition: var(--gh-duration) ease;
+    background-size:
+        var(--gh-size) var(--gh-size),
+        100% 100%;
+    background-repeat: no-repeat;
+    background-position:
+        -100% -100%,
+        0 0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.glass:hover::before,
+.edu-timeline-content:hover::before,
+.card:hover::before,
+.skill-category:hover::before {
+    background-position:
+        100% 100%,
+        0 0;
+}
+
+/* Ensure card content stays above the glare layer */
+.glass > *,
+.edu-timeline-content > *,
+.card > *,
+.skill-category > * {
+    position: relative;
+    z-index: 2;
 }
