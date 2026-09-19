@@ -455,3 +455,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Initialize Lenis for buttery-smooth mousewheel scrolling
+const lenis = new Lenis({
+    lerp: 0.1, // Adjusts the smoothness (lower is smoother/heavier)
+    smoothWheel: true,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
