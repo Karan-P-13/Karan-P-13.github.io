@@ -456,6 +456,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-}
-
-requestAnimationFrame(raf);
