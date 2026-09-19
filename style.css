@@ -1223,3 +1223,8 @@ html { background-color: var(--bg-color); }
 .modal-btn.secondary:hover {
     background: rgba(255,255,255,0.1);
 }
+
+/* Project Hint Hover Animation */
+.project-card:hover .project-hint .fa-arrow-right {
+    transform: translateX(8px);
+}
