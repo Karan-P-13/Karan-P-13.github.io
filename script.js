@@ -44,14 +44,6 @@ function typeTextNodes(element, speed) {
     typeNextChar();
 }
 
-// Custom Cursor Tracking
-const cursor = document.getElementById('cursor');
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
 // Add hover effect to interactive elements
 const interactiveElements = document.querySelectorAll('a, button, .card, .timeline-item, .skill-category, .cert-card, .social-circle');
 interactiveElements.forEach(el => {
