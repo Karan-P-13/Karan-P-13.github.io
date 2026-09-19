@@ -1006,6 +1006,118 @@ body.loading {
 
 
 
+
+/* ==================== */
+/*   TIMELINE SECTION   */
+/* ==================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 3rem;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+    position: absolute;
+    top: 2rem;
+    left: -3rem; /* Aligns dot perfectly on the 2px line */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 3px solid var(--accent-color);
+    transform: translateX(1px); /* micro-adjustment for centering */
+    z-index: 2;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover Effect on Dot when card is hovered */
+.timeline-item:hover .timeline-dot {
+    background: var(--accent-color);
+    transform: translateX(1px) scale(1.4);
+    box-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
+}
+
+/* Timeline Card */
+.timeline-content {
+    padding: 2.5rem;
+    position: relative;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content .inst {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.timeline-content .date-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.timeline-content .grade {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .timeline {
+        padding-left: 2rem;
+    }
+    .timeline-dot {
+        left: -2rem;
+        width: 14px;
+        height: 14px;
+        top: 1.5rem;
+    }
+    .timeline-content {
+        padding: 1.5rem;
+    }
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+    .timeline-content .inst {
+        font-size: 1rem;
+    }
+}
+
 /* ========== GlareHover Effect (React Bits → Vanilla CSS) ========== */
 /* Applied globally to all card-like elements */
 .glass,
