@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan P - Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=1789852023">
+    <link rel="stylesheet" href="style.css?v=1789852248">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Devicon for Tech Stack logos -->
@@ -60,6 +60,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -243,25 +244,77 @@
             </div>
         </section>
 
+        
         <section id="projects">
             <h2 class="section-title reveal-init">Projects</h2>
             <div class="card-container">
-                <div class="card glass reveal-init project-card" style="display: flex; gap: 2rem; align-items: center;">
-                    <div class="project-icon" style="flex: 0 0 100px; height: 100px; background: rgba(14, 165, 233, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-red);">
-                        <i class="fas fa-cube"></i>
+                
+                <!-- Project 1: Unnati Advisor -->
+                <div class="card glass reveal-init project-card" style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;">
+                    <div class="project-icon" style="flex: 0 0 100px; height: 100px; background: rgba(14, 165, 233, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-color);">
+                        <i class="fas fa-robot"></i>
                     </div>
                     <div>
-                        <h3>LearnAR — Augmented Reality Learning Platform</h3>
-                        <p class="institution">HTML, Echo3D</p>
-                        <ul style="margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary);">
-                            <li style="margin-bottom: 0.5rem;">Developed an educational learning platform using HTML, integrated with Echo3D to render interactive 3D augmented reality models.</li>
-                            <li style="margin-bottom: 0.5rem;">Enabled users to view and explore AR models directly within learning content, making complex concepts more engaging and easier to understand.</li>
-                            <li>Designed the platform with a focus on enhancing the learning experience through interactive, visual content delivery.</li>
+                        <h3 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.25rem;">Unnati Advisor (SIH 2026)</h3>
+                        <p class="institution" style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem;">Next.js, Tailwind CSS, AI, Recharts</p>
+                        <ul class="card-list" style="margin-top: 1rem;">
+                            <li style="margin-bottom: 0.5rem;">Built an AI-driven hyper-local business advisory platform for rural micro-entrepreneurs to overcome digital literacy barriers.</li>
+                            <li style="margin-bottom: 0.5rem;">Engineered multilingual voice-input flows and dynamic financial dashboards using Recharts to automatically project investments and break-even points.</li>
+                            <li>Implemented offline resilience via localStorage, a swipe-to-delete sidebar, and a highly optimized PDF export engine for offline business plan usage.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- Project 2: Distributed Systems Exam Portal -->
+                <div class="card glass reveal-init project-card" style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;">
+                    <div class="project-icon" style="flex: 0 0 100px; height: 100px; background: rgba(14, 165, 233, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-color);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.25rem;">Distributed Exam Portal & Load Balancer</h3>
+                        <p class="institution" style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem;">Java HTTP Server, React, TypeScript</p>
+                        <ul class="card-list" style="margin-top: 1rem;">
+                            <li style="margin-bottom: 0.5rem;">Developed a full-stack examination portal powered by a custom-built Java backend with a simulated cluster of virtual nodes.</li>
+                            <li style="margin-bottom: 0.5rem;">Engineered dynamic traffic routing (Round Robin, Sticky Sessions) and auto-scaling threads that provision new servers at 75% load.</li>
+                            <li>Utilized concurrent data structures (CopyOnWriteArrayList) to safely manage real-time, cross-network exam submissions synced to a live Admin dashboard.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 3: ACES Aquatics Manager -->
+                <div class="card glass reveal-init project-card" style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;">
+                    <div class="project-icon" style="flex: 0 0 100px; height: 100px; background: rgba(14, 165, 233, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-color);">
+                        <i class="fas fa-swimmer"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.25rem;">ACES Aquatics Manager</h3>
+                        <p class="institution" style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem;">Next.js, TypeScript, Prisma, SQLite, Auth.js</p>
+                        <ul class="card-list" style="margin-top: 1rem;">
+                            <li style="margin-bottom: 0.5rem;">Architected a responsive management platform for competitive swim teams, featuring strict role-based access for Coaches and Students.</li>
+                            <li style="margin-bottom: 0.5rem;">Developed a custom workout builder with template saving, time-gated practice releases, and daily athlete wellness logging.</li>
+                            <li>Designed a deep-water dark mode aesthetic using Tailwind CSS and shadcn/ui, featuring real-time notification alerts and readiness trend charts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Existing LearnAR Project -->
+                <div class="card glass reveal-init project-card" style="display: flex; gap: 2rem; align-items: center;">
+                    <div class="project-icon" style="flex: 0 0 100px; height: 100px; background: rgba(14, 165, 233, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-color);">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.25rem;">LearnAR — Augmented Reality Learning Platform</h3>
+                        <p class="institution" style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem;">HTML, Echo3D</p>
+                        <ul class="card-list" style="margin-top: 1rem;">
+                            <li style="margin-bottom: 0.5rem;">Developed an educational learning platform using HTML, integrated with Echo3D to render interactive 3D augmented reality models.</li>
+                            <li style="margin-bottom: 0.5rem;">Enabled users to view and explore AR models directly within learning content, making complex concepts more engaging and easier to understand.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
+
 
         <section id="credentials">
             <h2 class="section-title reveal-init">Certifications</h2>
@@ -387,6 +440,6 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="click-spark.js?v=1789850035"></script>
-    <script src="script.js?v=1789851812"></script>
+    <script src="script.js?v=1789852248"></script>
 </body>
 </html>
