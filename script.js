@@ -30,7 +30,7 @@ function typeTextNodes(element, speed) {
         }
         
         const currentInfo = textNodes[nodeIndex];
-        charIndex += 4; // Types 4 chars at a time to be ultra fast
+        charIndex += 2; // Types 2 chars at a time for a balanced speed
         if(charIndex > currentInfo.text.length) charIndex = currentInfo.text.length;
         
         currentInfo.node.nodeValue = currentInfo.text.substring(0, charIndex);
