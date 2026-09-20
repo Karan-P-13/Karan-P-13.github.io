@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan P - Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=1789852915">
+    <link rel="stylesheet" href="style.css?v=1789898659">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Devicon for Tech Stack logos -->
@@ -212,17 +212,26 @@
   </div>
 </section>
 
-        <section id="skills">
+                <section id="skills">
             <h2 class="section-title reveal-init" style="display: flex; align-items: center; gap: 15px;">
-                <i class="devicon-java-plain colored" style="font-size: 2.5rem;"></i> Java Expertise
+                <i class="devicon-java-plain colored" style="font-size: 2.5rem;"></i> My Expertise
             </h2>
-            <div class="java-expertise-content glass reveal-init"  style="padding: 3rem; text-align: left; line-height: 1.8;">
-                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-primary);">
-                    I possess a robust and deep understanding of <strong style="color: var(--accent-red);">Java</strong> and its core concepts, which serves as the primary backbone of my software development and problem-solving toolkit. My expertise spans across essential Object-Oriented Programming (OOP) principles such as Inheritance, Polymorphism, Encapsulation, and Abstraction, alongside advanced topics including multithreading, exception handling, and the Java Collections Framework. I have actively applied these concepts in building robust full-stack web applications using the Spring Boot framework, ensuring scalable and secure backend architectures.
-                </p>
-                <p style="font-size: 1.1rem; color: var(--text-primary);">
-                    My dedication to mastering Java is formally backed by my credentials. Through the rigorous 30-Day Technical Training Program with <strong style="color: var(--accent-red);">Aptitude Guru Hemchandar</strong>, I cemented my grasp on complex Data Structures and Algorithms (DSA) implemented directly in Java, significantly enhancing my logic-building and optimization capabilities. Furthermore, my <strong style="color: var(--accent-red);">Java Full Stack Certification</strong> from Greens Technologies validates my ability to seamlessly integrate enterprise-level Java backend services with modern database fundamentals and interactive front-end technologies to deliver complete, production-ready applications.
-                </p>
+            <div class="skills-grid reveal-init">
+                <div class="java-expertise-content glass"  style="padding: 3rem; text-align: left; line-height: 1.8;">
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-primary);">
+                        I possess a robust and deep understanding of <strong style="color: var(--accent-color);">Java</strong> and its core concepts, which serves as the primary backbone of my software development and problem-solving toolkit. My expertise spans across essential Object-Oriented Programming (OOP) principles such as Inheritance, Polymorphism, Encapsulation, and Abstraction, alongside advanced topics including multithreading, exception handling, and the Java Collections Framework. I have actively applied these concepts in building robust full-stack web applications using the Spring Boot framework, ensuring scalable and secure backend architectures.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-primary);">
+                        My dedication to mastering Java is formally backed by my credentials. Through the rigorous 30-Day Technical Training Program with <strong style="color: var(--accent-color);">Aptitude Guru Hemchandar</strong>, I cemented my grasp on complex Data Structures and Algorithms (DSA) implemented directly in Java, significantly enhancing my logic-building and optimization capabilities. Furthermore, my <strong style="color: var(--accent-color);">Java Full Stack Certification</strong> from Greens Technologies validates my ability to seamlessly integrate enterprise-level Java backend services with modern database fundamentals and interactive front-end technologies to deliver complete, production-ready applications.
+                    </p>
+                </div>
+                
+                <div class="glass" style="padding: 2rem; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1.5rem; font-size: 1.2rem;">Skill Matrix</h3>
+                    <div style="width: 100%; max-width: 400px; aspect-ratio: 1/1;">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -392,17 +401,58 @@
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="reveal-init" style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <h2 class="contact-title" style="margin-bottom: 1.5rem;">Let's Connect</h2>
-                <p class="contact-subtitle" style="margin-bottom: 3rem;">
-                    I am currently open to entry-level software engineering roles. Feel free to reach out for collaborations or just a friendly hello!
-                </p>
-                <div class="social-links" style="display: flex; justify-content: center; gap: 1.5rem;">
-                    <a href="mailto:karanprabhakar1310@gmail.com" class="social-circle glass"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+918870772526" class="social-circle glass"><i class="fas fa-phone-alt"></i></a>
-                    <a href="https://www.linkedin.com/in/karan-1310-p/" target="_blank" class="social-circle glass"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Karan-P-13" target="_blank" class="social-circle glass"><i class="fab fa-github"></i></a>
+                <section id="contact" class="contact-section reveal-init">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
+                Whether you have a question, a project idea, or just want to say hi, my inbox is always open. I'll try my best to get back to you!
+            </p>
+            
+            <div class="skills-grid" style="align-items: start;">
+                <!-- Contact Form -->
+                <div class="glass" style="padding: 3rem;">
+                    <form action="https://formspree.io/f/xvgoekwa" method="POST" id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="name" style="color: var(--text-primary); font-weight: 500;">Name</label>
+                            <input type="text" id="name" name="name" required style="padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;" placeholder="Your Name">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="email" style="color: var(--text-primary); font-weight: 500;">Email</label>
+                            <input type="email" id="email" name="email" required style="padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;" placeholder="your.email@example.com">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="message" style="color: var(--text-primary); font-weight: 500;">Message</label>
+                            <textarea id="message" name="message" rows="5" required style="padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif; resize: vertical;" placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="modal-btn primary" style="justify-content: center; border: none; font-size: 1rem; cursor: pointer; padding: 1rem;">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="glass" style="padding: 3rem; display: flex; flex-direction: column; gap: 2rem;">
+                    <h3 style="color: var(--accent-color); font-size: 1.5rem;">Other Ways To Connect</h3>
+                    
+                    <a href="https://github.com/Karan-P-13" target="_blank" style="display: flex; align-items: center; gap: 1rem; color: var(--text-primary); text-decoration: none; font-size: 1.2rem; transition: color 0.3s;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s;" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        GitHub Profile
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/karanprabhakar13/" target="_blank" style="display: flex; align-items: center; gap: 1rem; color: var(--text-primary); text-decoration: none; font-size: 1.2rem; transition: color 0.3s;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s;" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        LinkedIn Network
+                    </a>
+                    
+                    <a href="mailto:karanprabhakar13@gmail.com" style="display: flex; align-items: center; gap: 1rem; color: var(--text-primary); text-decoration: none; font-size: 1.2rem; transition: color 0.3s;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s;" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        karanprabhakar13@gmail.com
+                    </a>
                 </div>
             </div>
         </section>
@@ -456,6 +506,6 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="click-spark.js?v=1789850035"></script>
-    <script src="script.js?v=1789852860"></script>
+    <script src="script.js?v=1789898659"></script>
 </body>
 </html>

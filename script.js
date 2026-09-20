@@ -508,3 +508,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Interactive Skill Radar Chart
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('skillsChart');
+    if(canvas) {
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Backend (Java)', 'Frontend (React)', 'Databases', 'AI / ML', 'System Design', 'Algorithms'],
+                datasets: [{
+                    label: 'Proficiency',
+                    data: [95, 80, 85, 75, 80, 90],
+                    backgroundColor: 'rgba(14, 165, 233, 0.2)', // Cyan transparent
+                    borderColor: 'rgba(14, 165, 233, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(14, 165, 233, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(14, 165, 233, 1)',
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { 
+                            color: 'rgba(255, 255, 255, 0.8)', 
+                            font: { size: 12, family: "'Poppins', sans-serif" } 
+                        },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        titleFont: { family: "'Poppins', sans-serif" },
+                        bodyFont: { family: "'Poppins', sans-serif" },
+                        padding: 10,
+                        cornerRadius: 8,
+                        displayColors: false
+                    }
+                }
+            }
+        });
+    }
+});
