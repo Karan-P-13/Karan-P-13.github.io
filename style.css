@@ -631,7 +631,9 @@ footer {
 .modal-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
     padding: 1.5rem 5%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
