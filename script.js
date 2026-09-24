@@ -484,6 +484,27 @@ document.addEventListener('DOMContentLoaded', () => {
             mTech.innerText = tech;
             mDesc.innerHTML = `<ul class="card-list" style="margin-left: 0;">${listItems}</ul>`;
             
+            // Handle buttons
+            const demoBtn = document.getElementById('modal-demo-btn');
+            const githubBtn = document.getElementById('modal-github-btn');
+            
+            const demoLink = card.getAttribute('data-demo');
+            const githubLink = card.getAttribute('data-github');
+            
+            if (demoLink) {
+                demoBtn.href = demoLink;
+                demoBtn.style.display = 'flex';
+            } else {
+                demoBtn.style.display = 'none';
+            }
+            
+            if (githubLink) {
+                githubBtn.href = githubLink;
+                githubBtn.style.display = 'flex';
+            } else {
+                githubBtn.style.display = 'none';
+            }
+            
             // Show modal
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
