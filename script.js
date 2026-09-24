@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(!modal || projectCards.length === 0) return;
 
     // Elements inside modal
-    const mTitle = document.getElementById('modal-title');
+    const mTitle = document.getElementById('project-modal-title');
     const mTech = document.getElementById('modal-tech');
     const mDesc = document.getElementById('modal-desc');
 
