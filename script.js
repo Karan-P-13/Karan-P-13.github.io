@@ -476,12 +476,12 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             // Extract data from the card to populate the modal
-            const title = card.querySelector('h3').innerText;
-            const tech = card.querySelector('.institution').innerText;
+            const title = card.querySelector('h3').textContent;
+            const tech = card.querySelector('.institution').textContent;
             const listItems = card.querySelector('ul').innerHTML;
 
-            mTitle.innerText = title;
-            mTech.innerText = tech;
+            mTitle.textContent = title;
+            mTech.textContent = tech;
             mDesc.innerHTML = `<ul class="card-list" style="margin-left: 0;">${listItems}</ul>`;
             
             // Handle buttons
